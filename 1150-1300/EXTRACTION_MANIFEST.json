@@ -5,7 +5,7 @@
   "unique_local_files": 18,
   "files": [
     {
-      "url": "https://raw-game.com/zrm/",
+      "url": "https://w90008.github.io/11/g2all/index.html",
       "local_path": "index.html",
       "mime_type": "text/html",
       "status_code": 200,
@@ -13,7 +13,7 @@
       "cache_entry_type": 1
     },
     {
-      "url": "https://raw-game.com/zrm/cache.appcache",
+      "url": "https://w90008.github.io/11/g2all/cache.appcache",
       "local_path": "cache.appcache",
       "mime_type": "text/cache-manifest",
       "status_code": 200,
@@ -21,7 +21,7 @@
       "cache_entry_type": 2
     },
     {
-      "url": "https://raw-game.com/zrm/chain_lapse.js",
+      "url": "https://w90008.github.io/11/g2all/chain_lapse.js",
       "local_path": "chain_lapse.js",
       "mime_type": "text/javascript",
       "status_code": 200,
@@ -29,7 +29,7 @@
       "cache_entry_type": 4
     },
     {
-      "url": "https://raw-game.com/zrm/chain_poops.js",
+      "url": "https://w90008.github.io/11/g2all/chain_poops.js",
       "local_path": "chain_poops.js",
       "mime_type": "text/javascript",
       "status_code": 200,
@@ -37,7 +37,7 @@
       "cache_entry_type": 4
     },
     {
-      "url": "https://raw-game.com/zrm/core.js",
+      "url": "https://w90008.github.io/11/g2all/core.js",
       "local_path": "core.js",
       "mime_type": "text/javascript",
       "status_code": 200,
@@ -45,7 +45,7 @@
       "cache_entry_type": 4
     },
     {
-      "url": "https://raw-game.com/zrm/int64.js",
+      "url": "https://w90008.github.io/11/g2all/int64.js",
       "local_path": "int64.js",
       "mime_type": "text/javascript",
       "status_code": 200,
