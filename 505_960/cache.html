@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" manifest="ps4jb.cache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الجنرال للألعاب الإلكترونية - Auto JB 5.05 - 9.60</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; min-height: 100vh;
+    background-color: #000000; background-image: url('../image_3.png');
+    background-repeat: no-repeat; background-position: center center;
+    background-attachment: fixed; background-size: cover;
+    color: #e6ebf2; font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  #brand {
+    text-align: center; padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  #brand b {
+    font-size: 16px; font-weight: 700; letter-spacing: 0.08em; color: #ffffff;
+  }
+  #wrap {
+    margin: 20px auto; width: 90%; max-width: 650px; padding: 20px;
+    background: rgba(10, 12, 16, 0.65); backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    display: flex; flex-direction: column; flex: 1; max-height: 70vh;
+  }
+  .main-title {
+    margin: 0 0 15px 0; text-align: center; font-size: 20px; font-weight: 700;
+    background: linear-gradient(45deg, #ff00aa, #00ffff, #ff00ff, #00ff9d);
+    background-size: 300% 300%; -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; animation: gradientFlow 8s ease infinite;
+    text-shadow: 0 0 25px rgba(255, 0, 170, 0.6);
+  }
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  #console {
+    white-space: pre-wrap; font: 13px/1.5 Consolas, "Courier New", monospace;
+    background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px; padding: 12px; flex: 1; overflow-y: auto; color: #d1d5db; text-align: left;
+  }
+  #footer-credits {
+    text-align: center; padding: 10px; font-size: 12px; color: #a1a1aa;
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+</style>
+</head>
+<body>
+
+<div id="brand">
+  <b>الجنرال للألعاب الإلكترونية: 0918846443</b>
+</div>
+
+<div id="wrap">
+  <h1 class="main-title">Auto JB PS4 5.05, 6.70 - 9.60</h1>
+  <pre id="console"></pre>
+</div>
+
+
+
+<audio id="bg-music" loop autoplay preload="auto"><source src="../song.mp3" type="audio/mpeg"></audio>
+
+<script>
+  // منع الرجوع للخلف والتنقل المباشر
+  history.replaceState(null, null, 'index.html');
+  var histlength = history.length;
+  history.go(-histlength);
+
+  // دالة طباعة السجلات
+  var outputConsole = document.getElementById("console");
+  window.log = function (msg) {
+    outputConsole.textContent += msg + "\n";
+    outputConsole.scrollTop = outputConsole.scrollHeight;
+  };
+
+  // متابعة نسبة التنزيل
+  function DLProgress(e) {
+    if (!e || !e.total) return;
+    var percent = (Math.round((e.loaded / e.total) * 100));
+    window.log("[CACHE] Downloading... " + percent + "% complete.");
+  }
+
+  // عند اكتمال الكاش
+  function DisplayCacheProgress() {
+    window.log(" ");
+    window.log("[SUCCESS] Cache berhasil diinstall");
+    window.log("Tahan tombol PS > Power > Restart PS4.");
+  }
+
+  // عند حدوث خطأ
+  function DLError(e) {
+    window.log(" ");
+    window.log("[CACHE ERROR] An error occurred during Cache...");
+  }
+
+  // ربط الأحداث مع Application Cache
+  if (window.applicationCache) {
+    window.applicationCache.addEventListener("progress", DLProgress, false);
+    window.applicationCache.addEventListener("error", DLError, false);
+    window.applicationCache.oncached = function(e) { DisplayCacheProgress(); };
+    window.applicationCache.onupdateready = function(e) { DisplayCacheProgress(); };
+  }
+</script>
+
+</body>
+</html>

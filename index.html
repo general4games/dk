@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الجنرال للالعاب الالكترونية - PS4 Jailbreak</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; min-height: 100vh;
+    background-color: #000000; background-image: url('image_3.png');
+    background-repeat: no-repeat; background-position: center center;
+    background-attachment: fixed; background-size: cover;
+    color: #e6ebf2; font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  #brand {
+    text-align: center; padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  #brand b {
+    font-size: 16px; font-weight: 700; letter-spacing: 0.08em;
+    color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  #wrap {
+    margin: auto; width: 90%; max-width: 480px; padding: 24px;
+    background: rgba(10, 12, 16, 0.55); backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8); text-align: center;
+  }
+  #state { font-size: 18px; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.05em; color: #fca311; }
+</style>
+</head>
+<body>
+
+<div id="brand">
+  <b>الجنرال للالعاب الالكترونية   : 0918846443</b>
+</div>
+
+<div id="wrap">
+  <div id="state">جاري التعرف على إصدار النظام وتحويلك للثغرة...</div>
+</div>
+
+<audio id="bg-music" loop autoplay preload="auto"><source src="song.mp3" type="audio/mpeg"></audio>
+
+<script>
+  function processDevice() {
+      const audio = document.getElementById('bg-music');
+      if (audio) { audio.play().catch(function() {}); }
+
+      const userAgent = navigator.userAgent;
+      const isPS4 = /PlayStation 4|PS4/i.test(userAgent);
+      
+      if (isPS4) {
+          const fwMatch = userAgent.match(/(?:PlayStation 4|PS4)[\s\/]+([\d\.]+)/i);
+          if (fwMatch && fwMatch[1]) {
+              const firmware = parseFloat(fwMatch[1]);
+              if (firmware >= 5.00 && firmware <= 9.60) {
+                  setTimeout(() => { window.location.href = "505_960/index.html"; }, 3000);
+              } else if (firmware >= 10.00 && firmware <= 11.02) {
+                  setTimeout(() => { window.location.href = "1000_1102/index.html"; }, 3000);
+              } else if (firmware >= 11.50 && firmware <= 13.00) {
+                  setTimeout(() => { window.location.href = "1150-1300/index.html"; }, 3000);
+              }
+          }
+      }
+  }
+  window.onload = processDevice;
+</script>
+
+</body>
+</html>
